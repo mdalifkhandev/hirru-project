@@ -1,9 +1,88 @@
-import { Text, View } from "react-native";
+import coin from "@/assets/custom/Frame.png";
+import logo from "@/assets/custom/Group.png";
+import profile from "@/assets/custom/profile.png";
+import FlatLilstHotelAndBar, { hotelAndBar } from "@/components/home/FlatLilstHotelAndBar";
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { Image } from "expo-image";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Contact() {
   return (
-    <View>
-      <Text> contacr Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quibusdam praesentium corrupti totam harum tempora eum quam, tenetur in impedit illo inventore laudantium, iure mollitia omnis dolorum neque! Reprehenderit, blanditiis?</Text>
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+
+        {/* Logo and top bar */}
+        <View className='flex-1 flex-row justify-between'>
+          <TouchableOpacity>
+            <View className="h-24 w-24 mx-5">
+              <Image
+                contentFit="contain"
+                source={logo}
+                transition={1000}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </View>
+          </TouchableOpacity>
+          <View className="mx-5">
+            <View className="flex-1 flex-row gap-5 mt-5">
+              <TouchableOpacity>
+                <View className="bg-[#e4dada] w-14 h-14 rounded-full ">
+                  <AntDesign name="message" size={24} color="black" className="mt-3.5 ml-3.5" />
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View className="bg-[#e4dada] w-14 h-14 rounded-full ">
+                  <Ionicons name="notifications-outline" size={24} color="black" className="mt-3.5 ml-3.5" />
+                  <Text className="fixed -mt-10 ml-7 bg-[#4FB2F3] font-bold mr-2 rounded-full text-center">1</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View className="bg-[#e4dada] w-14 h-14 rounded-full ">
+                  <MaterialCommunityIcons name="line-scan" size={24} color="black" className="mt-3.5 ml-3.5" />
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        {/* Profile and Name griting */}
+        <View className="m-5 flex-1 flex-row gap-4">
+          <View className="h-11 w-11">
+            <Image
+              source={profile}
+              contentFit="contain"
+              transition={1000}
+              style={{ height: 44, width: 44 }}
+            />
+          </View>
+          <View>
+            <Text className="text-sm" > 👋 Hello, Jamming</Text>
+            <Text className="font-bold text-base"> Ready for today’s task?</Text>
+          </View>
+          <View className="flex-1 flex-row justify-end">
+            <Image source={coin} style={{ height: 32, width: 29.3, zIndex: 10 }} contentFit="contain" />
+            <View className="w-14 h-[30px] bg-[#DDF1FF] rounded-2xl -ml-5">
+              <Text className="font-bold ml-6 my-auto">05</Text>
+            </View>
+          </View>
+        </View>
+        {/* Your Today’s Shifts */}
+        <View className="m-5 flex-1 flex-row justify-between">
+          <Text className="text-xl font-semibold">Your Today’s Shifts</Text>
+          <View className="bg-[#DDF1FF] rounded-3xl p-2">
+            <TouchableOpacity className="m-auto">
+              <Text className=" ml-1 -mt-2">
+                All <MaterialCommunityIcons name="chevron-down" className="m-auto" size={24} color="black" />
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        {/* flat list asa akhana */}
+        <FlatLilstHotelAndBar hotelAndBar={hotelAndBar} />
+
+      </ScrollView>
+    </SafeAreaView>
   );
 }

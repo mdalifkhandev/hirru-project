@@ -1,11 +1,12 @@
-import {Tabs } from "expo-router";
-import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import Entypo from '@expo/vector-icons/Entypo';
+import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { Tabs } from "expo-router";
+import React from "react";
 
 const _layout = () => {
+
   return (
     <Tabs
       screenOptions={{
