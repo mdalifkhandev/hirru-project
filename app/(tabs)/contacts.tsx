@@ -2,6 +2,9 @@ import coin from "@/assets/custom/Frame.png";
 import logo from "@/assets/custom/Group.png";
 import profile from "@/assets/custom/profile.png";
 import FlatLilstHotelAndBar, { hotelAndBar } from "@/components/home/FlatLilstHotelAndBar";
+import QuickAcrion from "@/components/home/QuickAcrion";
+import SimpleCart from "@/components/home/SimpleCart";
+import WorkInsigir from "@/components/home/WorkInsigir";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -11,8 +14,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Contact() {
   return (
-    <SafeAreaView>
-      <ScrollView>
+    <SafeAreaView edges={["top", "left", "right"]} className="flex-1">
+      <ScrollView className="bg-[#FFFFFF] ">
 
         {/* Logo and top bar */}
         <View className='flex-1 flex-row justify-between'>
@@ -29,19 +32,19 @@ export default function Contact() {
           <View className="mx-5">
             <View className="flex-1 flex-row gap-5 mt-5">
               <TouchableOpacity>
-                <View className="bg-[#e4dada] w-14 h-14 rounded-full ">
-                  <AntDesign name="message" size={24} color="black" className="mt-3.5 ml-3.5" />
+                <View className="bg-[#f5f5f5] w-14 h-14 rounded-full ">
+                  <AntDesign name="message" size={24} color="#111111" className="mt-3.5 ml-3.5" />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity>
-                <View className="bg-[#e4dada] w-14 h-14 rounded-full ">
-                  <Ionicons name="notifications-outline" size={24} color="black" className="mt-3.5 ml-3.5" />
+                <View className="bg-[#f5f5f5] w-14 h-14 rounded-full ">
+                  <Ionicons name="notifications-outline" size={24} color="#111111" className="mt-3.5 ml-3.5" />
                   <Text className="fixed -mt-10 ml-7 bg-[#4FB2F3] font-bold mr-2 rounded-full text-center">1</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity>
-                <View className="bg-[#e4dada] w-14 h-14 rounded-full ">
-                  <MaterialCommunityIcons name="line-scan" size={24} color="black" className="mt-3.5 ml-3.5" />
+                <View className="bg-[#f5f5f5] w-14 h-14 rounded-full ">
+                  <MaterialCommunityIcons name="line-scan" size={24} color="#111111" className="mt-3.5 ml-3.5" />
                 </View>
               </TouchableOpacity>
             </View>
@@ -74,14 +77,20 @@ export default function Contact() {
           <View className="bg-[#DDF1FF] rounded-3xl p-2">
             <TouchableOpacity className="m-auto">
               <Text className=" ml-1 -mt-2">
-                All <MaterialCommunityIcons name="chevron-down" className="m-auto" size={24} color="black" />
+                All <MaterialCommunityIcons name="chevron-down" size={24} color="black" />
               </Text>
             </TouchableOpacity>
           </View>
         </View>
         {/* flat list asa akhana */}
         <FlatLilstHotelAndBar hotelAndBar={hotelAndBar} />
-
+        {/* Rank Bord */}
+        <SimpleCart/>
+        {/* quick action  */}
+        {/* problem is key props */}
+        <QuickAcrion/>
+        {/*  */}
+        <WorkInsigir/>
       </ScrollView>
     </SafeAreaView>
   );

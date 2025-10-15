@@ -9,7 +9,6 @@ import ellipse6 from '@/assets/custom/flatList/Ellipse 11756.png';
 import location from '@/assets/custom/flatList/location.png';
 import profile from '@/assets/custom/flatList/profile.png';
 import timer from '@/assets/custom/flatList/timer.png';
-import { Button } from '@react-navigation/elements';
 import { Image } from "expo-image";
 import React from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
@@ -40,9 +39,9 @@ export const hotelAndBar = [
 
 const FlatLilstHotelAndBar = ({ hotelAndBar }: any) => {
     const renderItem = ({ item }: { item: (typeof hotelAndBar)[0] }) => (
-        <TouchableOpacity>
-            <View className="h-[209px] w-[320px] bg-[#E5F4FD] rounded-3xl  mx-4">
-                <View className="bg-white h-8 w-[244px] rounded-3xl m-auto flex-row items-center justify-center">
+
+            <View className="h-[209px] w-[320px] bg-[#E5F4FD] rounded-3xl  ">
+                <View className="bg-white h-8 w-[244px] mt-1 rounded-3xl m-auto flex-row items-center justify-center">
                     <Text className="text-center">Ongoing :</Text>
 
                     <Image
@@ -112,7 +111,7 @@ const FlatLilstHotelAndBar = ({ hotelAndBar }: any) => {
                     </View>
                 </View>
                 <View>
-                    <View className="mb-4 mx-4 flex-row items-center">
+                    <View className="mb-4 mx-4 flex-row items-center justify-between">
                         {/* Location Icon */}
                         <View>
                             <Image
@@ -129,15 +128,17 @@ const FlatLilstHotelAndBar = ({ hotelAndBar }: any) => {
                                 Maciezine, New York, USA, 
                             </Text>
                         </View>
-                        <View>
-                            <Button>Login</Button>
+                        <View className='bg-[#11293A] px-5 py-3 rounded-3xl '> 
+                            <TouchableOpacity>
+                                <Text className='text-white'>Login</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
             </View>
 
 
-        </TouchableOpacity>
+
     );
 
     return (
@@ -146,9 +147,8 @@ const FlatLilstHotelAndBar = ({ hotelAndBar }: any) => {
                 data={hotelAndBar}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}
-                horizontal={true}
+                horizontal
                 showsHorizontalScrollIndicator={false}
-
             />
         </View>
     );
