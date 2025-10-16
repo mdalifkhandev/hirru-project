@@ -18,11 +18,11 @@ const months = [
   { id: '12', image: img1 },
 ];
 
-const MonthImagePicker = () => {
+const ProfilePicker = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View className="w-[60px] mt-12">
+    <View className="w-[60px]">
       {/* Picker Button */}
       <TouchableOpacity
         className="bg-gray-300 p-2 rounded-3xl items-center"
@@ -67,4 +67,4 @@ const MonthImagePicker = () => {
   );
 };
 
-export default MonthImagePicker;
+export default ProfilePicker;

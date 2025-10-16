@@ -1,20 +1,25 @@
 import coin from "@/assets/custom/Frame.png";
 import logo from "@/assets/custom/Group.png";
 import profile from "@/assets/custom/profile.png";
+import BisnessModal from "@/components/home/BismessModel";
 import FlatLilstHotelAndBar, { hotelAndBar } from "@/components/home/FlatLilstHotelAndBar";
 import QuickAcrion from "@/components/home/QuickAcrion";
 import SimpleCart from "@/components/home/SimpleCart";
-import WorkInsigir from "@/components/home/WorkInsigir";
+import WorkInsigir from "@/components/home/worklinsigir.tsx/WorkInsigir";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { Image } from "expo-image";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useState } from "react";
+import { ScrollView, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Contact() {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
-    <SafeAreaView edges={["top", "left", "right"]} className="flex-1">
+    <SafeAreaView edges={["top", "left", "right"]} className="flex-1 bg-white">
+        <StatusBar barStyle="dark-content" backgroundColor="#fff"/>
+
       <ScrollView className="bg-[#FFFFFF] ">
 
         {/* Logo and top bar */}
@@ -75,7 +80,7 @@ export default function Contact() {
         <View className="m-5 flex-1 flex-row justify-between">
           <Text className="text-xl font-semibold">Your Today’s Shifts</Text>
           <View className="bg-[#DDF1FF] rounded-3xl p-2">
-            <TouchableOpacity className="m-auto">
+            <TouchableOpacity onPress={() => setModalVisible(true)} className="m-auto">
               <Text className=" ml-1 -mt-2">
                 All <MaterialCommunityIcons name="chevron-down" size={24} color="black" />
               </Text>
@@ -91,6 +96,9 @@ export default function Contact() {
         <QuickAcrion/>
         {/*  */}
         <WorkInsigir/>
+
+<BisnessModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
+
       </ScrollView>
     </SafeAreaView>
   );

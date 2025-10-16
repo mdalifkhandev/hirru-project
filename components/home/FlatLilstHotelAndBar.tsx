@@ -40,7 +40,7 @@ export const hotelAndBar = [
 const FlatLilstHotelAndBar = ({ hotelAndBar }: any) => {
     const renderItem = ({ item }: { item: (typeof hotelAndBar)[0] }) => (
 
-            <View className="h-[209px] w-[320px] bg-[#E5F4FD] rounded-3xl  ">
+            <View className="h-[209px] w-[320px] bg-[#E5F4FD] rounded-3xl mx-4 ">
                 <View className="bg-white h-8 w-[244px] mt-1 rounded-3xl m-auto flex-row items-center justify-center">
                     <Text className="text-center">Ongoing :</Text>
 
@@ -142,7 +142,7 @@ const FlatLilstHotelAndBar = ({ hotelAndBar }: any) => {
     );
 
     return (
-        <View className="m-5">
+        <View className="">
             <FlatList
                 data={hotelAndBar}
                 renderItem={renderItem}
