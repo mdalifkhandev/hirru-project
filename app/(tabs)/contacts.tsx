@@ -2,9 +2,11 @@ import coin from "@/assets/custom/Frame.png";
 import logo from "@/assets/custom/Group.png";
 import profile from "@/assets/custom/profile.png";
 import BisnessModal from "@/components/home/BismessModel";
+import Engagement from "@/components/home/Engagement";
 import FlatLilstHotelAndBar, { hotelAndBar } from "@/components/home/FlatLilstHotelAndBar";
 import QuickAcrion from "@/components/home/QuickAcrion";
 import SimpleCart from "@/components/home/SimpleCart";
+import Widgets from "@/components/home/Widgets";
 import WorkInsigir from "@/components/home/worklinsigir.tsx/WorkInsigir";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -18,7 +20,7 @@ export default function Contact() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView edges={["top", "left", "right"]} className="flex-1 bg-white">
-        <StatusBar barStyle="dark-content" backgroundColor="#fff"/>
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
 
       <ScrollView className="bg-[#FFFFFF] ">
 
@@ -81,7 +83,7 @@ export default function Contact() {
           <Text className="text-xl font-semibold">Your Today’s Shifts</Text>
           <View className="bg-[#DDF1FF] rounded-3xl p-2">
             <TouchableOpacity onPress={() => setModalVisible(true)} className="m-auto">
-              <Text className=" ml-1 -mt-2">
+              <Text className="">
                 All <MaterialCommunityIcons name="chevron-down" size={24} color="black" />
               </Text>
             </TouchableOpacity>
@@ -90,14 +92,26 @@ export default function Contact() {
         {/* flat list asa akhana */}
         <FlatLilstHotelAndBar hotelAndBar={hotelAndBar} />
         {/* Rank Bord */}
-        <SimpleCart/>
+        <SimpleCart />
         {/* quick action  */}
         {/* problem is key props */}
-        <QuickAcrion/>
+        <QuickAcrion />
         {/*  */}
-        <WorkInsigir/>
+        <WorkInsigir />
 
-<BisnessModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
+        <BisnessModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
+
+        {/* Engagement */}
+        <Text className="font-semibold text-xl mx-6">Engagement</Text>
+        <Engagement />
+        {/* Engagement */}
+
+        {/* Widgets */}
+        <View>
+          <Text className="font-semibold text-xl m-6">Widgets</Text>
+          <Widgets/>
+        </View>
+        {/* Widgets */}
 
       </ScrollView>
     </SafeAreaView>
